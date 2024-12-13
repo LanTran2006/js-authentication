@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Form</title>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="register-container">
+    <form class="register-form" id="registerForm">
+      <h2>Register</h2>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+        <small class="error-message" id="usernameError"></small>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email">
+        <small class="error-message"></small>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="password" name="password" placeholder="Enter your password">
+          <i class="toggle-eye fa-solid fa-eye-slash"></i>
+        </div>
+        <small class="error-message"></small>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="password-wrapper">
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+          <i class="toggle-eye fa-solid fa-eye-slash"></i>
+        </div>
+        <small class="error-message"></small>
+      </div>
+      <button type="submit">Register</button>
+      <p class="navigate-login">
+        Already have an account? <a href="../login/login.html">Login here</a>
+      </p>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
