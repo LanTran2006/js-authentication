@@ -113,3 +113,16 @@
 .navigate-register a:hover {
   color: #0056b3;
 }
+/* Remember Me Checkbox */
+.remember-me {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}

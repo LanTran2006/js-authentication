@@ -1,4 +1,3 @@
-
 let form = document.getElementById("loginForm");
 let mail_inp = document.getElementById("email");
 let password_inp = document.getElementById("password");
@@ -7,6 +6,7 @@ let password_error = document.querySelector(
   ".password-wrapper ~ .error-message"
 );
 let toggle_eye = document.querySelector(".toggle-eye");
+let checkbox=document.querySelector('.remember-me input[type="checkbox"]')
 let db;
 let isValid = true;
 let validate_text = {
@@ -25,10 +25,16 @@ toggle_eye.addEventListener("click", (e) => {
 });
 function init() {
   db = localStorage.getItem("db");
+  let detail=localStorage.getItem('detail')
   if (db) {
     db = JSON.parse(db);
   } else {
     db = [];
+  }
+  if (detail) {
+     detail=JSON.parse(detail);
+     mail_inp.value=detail.email;
+     password_inp.value=detail.password;
   }
 }
 init();
@@ -78,6 +84,16 @@ form.addEventListener("submit", (e) => {
     password_error.style.display = "block";
     password_inp.classList.add("error");
     return
+  }
+  if (checkbox.checked) {
+     let detail={
+       email: mail_inp.value,
+       password: password_inp.value
+     }
+      localStorage.setItem('detail',JSON.stringify(detail));
+
+  } else {
+     localStorage.removeItem('detail');
   }
   alert('login successfully')
 });
